@@ -113,8 +113,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Syntax
 source /home/egor/Документы/Terminal/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#Colorls
+# Colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
 alias lc='colorls -lA --sd'
 alias ls='colorls'
 alias mute="bash $HOME/Документы/Terminal/mute"
+
+# Autocomplete
+source $HOME/Документы/Terminal/zsh-autocomplete/zsh-autocomplete.plugin.zsh
