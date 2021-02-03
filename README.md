@@ -13,6 +13,7 @@
 1. `PyCharm settings` — настройка **PyCharm**
 1. `IntelliJ IDEA settings` — настройка **IntelliJ IDEA**
 
+
 <br>
 <p align="center">
   <sub> | <a href="https://endygamedev.github.io"> 👨‍💻 endygamdev </a> | </sub>
