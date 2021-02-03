@@ -6,7 +6,17 @@
   <a href="https://github.com/endygamedev/linux_config/blob/main/LICENSE"> <img alt="License" src="https://img.shields.io/github/license/endygamedev/linux_config?style=flat-square"> </a>
 </p>
 
-# :shell: Linux configs
+### :shell: Linux configs
+###### Dependencies
+1. [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
+1. [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+1. [i3blocks-contrib](https://github.com/vivien/i3blocks-contribi3blocks-contrib)
+1. [nord-termite](https://github.com/arcticicestudio/nord-termite)
+1. [colorls](https://github.com/athityakumar/colorls)
+1. ... and lots of [Vundle](https://github.com/VundleVim/Vundle.vim) dependecies for Vim
+
+###### Colors [here](https://www.nordtheme.com/)
+
 
 ###### Repo structure
 ```
