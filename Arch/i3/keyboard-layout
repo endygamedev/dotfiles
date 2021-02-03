@@ -1,0 +1,7 @@
+CURRENT_LANG=$($HOME/.config/i3/xkblayout-state/xkblayout-state print %s)
+if [ $CURRENT_LANG == "us" ]
+then
+	echo 🇺🇸
+else
+	echo 🇷🇺
+fi
