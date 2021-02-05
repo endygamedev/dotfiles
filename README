@@ -1,0 +1,17 @@
+.
+├── Arch
+│   ├── i3
+│   ├── termite
+│   ├── xorg.conf.d
+│   ├── zsh
+│   ├── .vimrc
+│   └── .zshrc
+├── Ubuntu
+│   ├── IntelliJ IDEA settings
+│   ├── PyCharm settings
+│   ├── custom-shortcuts.ini
+│   ├── .vimrc
+│   └── .zshrc
+├── generate-readme
+├── LICENSE
+└── README
