@@ -81,7 +81,7 @@ if ($status eq 'Discharging') {
 	} elsif ($percent < 85) {
 		print "#A8FF00\n";
 	} elsif ($percent <= 100) {
-		print "#4DFF00";
+		print "#4DFF00\n";
 	}
 
 	if ($percent < 5) {
