@@ -100,9 +100,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# PATH to pip3
+export PATH="${HOME}/.local/bin:$PATH"
 
 # PATH to Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# PATH to i3 configs
+export CONFIG="$HOME/.config/i3"
+
+# Bluetooth start alias
+alias bluetooth="sudo systemctl start bluetooth"
+
+# Wifi desconnect
+alias wifi_off="wpa_cli disconnect"
 
 # Syntax
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,4 +1,4 @@
-"--------------------------------------Vundle-------------------------------
+﻿"--------------------------------------Vundle-------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -35,12 +35,17 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Theme
 Plugin 'arcticicestudio/nord-vim'
 
+" Comments
+Plugin 'preservim/nerdcommenter'
+
 " Airline
+Plugin 'powerline/powerline'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " Emojis
 Plugin 'junegunn/vim-emoji'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,19 +65,54 @@ filetype plugin indent on    " required
 
 
 "------------------------Syntastic----------------------------------
-
-
-execute pathogen#infect()
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_mri_args = "--config=$HOME/.jshintrc"
+let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'pep8', 'pyflakes', 'python']
+let g:syntastic_yaml_checkers = ['jsyaml']
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 
+"----------------------Airline--------------------------------------
+set guifont=Dejavu\ Sans\ Mono\ 12
+let g:Powerline_symbols = 'unicode'
+
+let g:airline_powerline_fonts = 1
+let g:gruvbox_contrast_dark="meduim"
+let g:airline_detect_spelllang=1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {} 
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 "--------------------------MY SETTINGS------------------------------
 
@@ -100,8 +140,12 @@ set autoindent
 set linebreak
 
 "Airline
-let g:airline_theme='deus'
+let g:airline_theme='sol'
 set t_Co=256
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
 
 "Binds
 map <C-z> :undo<CR>

@@ -190,8 +190,8 @@ bar {
 bindsym Print exec gnome-screenshot --interactive
 
 # Brightness level
-bindsym XF86MonBrightnessUp exec /home/egor/.config/i3/bright/brightUp
-bindsym XF86MonBrightnessDown exec /home/egor/.config/i3/bright/brightDown
+bindsym XF86MonBrightnessUp exec /home/egor/.config/i3/scripts/brightUp
+bindsym XF86MonBrightnessDown exec /home/egor/.config/i3/scripts/brightDown
 
 # Wallpaper
 exec_always feh --bg-scale /home/egor/Pictures/wallpaper.png
