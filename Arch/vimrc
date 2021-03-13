@@ -62,9 +62,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
-
 "------------------------Syntastic----------------------------------
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -78,8 +77,8 @@ let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'pep8', 'pyflakes', 'pyt
 let g:syntastic_yaml_checkers = ['jsyaml']
 let g:syntastic_html_tidy_exec = 'tidy5'
 
-
 "----------------------Airline--------------------------------------
+
 set guifont=Dejavu\ Sans\ Mono\ 12
 let g:Powerline_symbols = 'unicode'
 
@@ -91,7 +90,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {} 
 endif
 
-" unicode symbols
+"Unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -105,7 +104,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
+"Airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -114,8 +113,14 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-"--------------------------MY SETTINGS------------------------------
+let g:airline_theme='sol'
+set t_Co=256
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
 
+"--------------------------MY SETTINGS------------------------------
 
 "Style
 let g:python_highlight_all = 1 "Python Syntax
@@ -139,14 +144,6 @@ set smarttab
 set autoindent
 set linebreak
 
-"Airline
-let g:airline_theme='sol'
-set t_Co=256
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
-
 "Binds
 map <C-z> :undo<CR>
 map <C-p> :tabn<CR>
@@ -162,6 +159,10 @@ autocmd FileType python map <buffer> <F5> :w<CR>:ba<CR> :ter python3 "%"<CR>
 
 "Run Rust Projects
 autocmd FileType rust map <buffer> <F5> :w<CR> :!clear; time cargo run<CR>
+
+" Run C files
+autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
+autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
 
 "Comment Lines Python Scripts
 autocmd FileType python vmap <buffer> <C-d> :s/^/#/g <CR> :let @/ = ""<CR>

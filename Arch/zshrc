@@ -109,6 +109,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # PATH to i3 configs
 export CONFIG="$HOME/.config/i3"
 
+# PATH to `university` folder
+export UNI="$HOME/Documents/university"
+
 # Bluetooth start alias
 alias bluetooth="sudo systemctl start bluetooth"
 
@@ -122,8 +125,11 @@ source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 source $(dirname $(gem which colorls))/tab_complete.sh
-alias lc='colorls -lA --sd'
-alias ls='colorls'
+alias ls='colorls -lA --sd'
+# alias ls='colorls'
+
+# Python3
+alias python="python3"
 
 # Autocomplete
 source $HOME/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh

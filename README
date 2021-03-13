@@ -4,8 +4,8 @@
 │   ├── termite
 │   ├── xorg.conf.d
 │   ├── zsh
-│   ├── .vimrc
-│   └── .zshrc
+│   ├── vimrc
+│   └── zshrc
 ├── Ubuntu
 │   ├── IntelliJ IDEA settings
 │   ├── PyCharm settings
