@@ -46,6 +46,8 @@ Plugin 'vim-airline/vim-airline-themes'
 " Emojis
 Plugin 'junegunn/vim-emoji'
 
+" Markdown
+Plugin 'iamcco/markdown-preview.nvim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -119,6 +121,34 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
+
+"--------------------------Markdown--------------------------------
+
+let g:mkdp_auto_start = 1
+let g:mkdp_auto_close = 1
+lef g:mkdp_refresh_slow = 1
+let g:mkdp_command_for_global = 0
+let g:mkdp_open_ip = ''
+let g:mkdp_browser = ''
+let g:mkdp_echo_preview_url = 0
+let g:mkdp_browserfunc = ''
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0
+    \ }
+
+let g:mkdp_page_title = '${name}'
+let g:mkdp_port = ''
+let g:mkdp_filetypes = ['markdown']
 
 "--------------------------MY SETTINGS------------------------------
 
