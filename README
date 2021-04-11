@@ -1,9 +1,11 @@
 .
 ├── Arch
 │   ├── i3
+│   ├── scripts
 │   ├── termite
 │   ├── xorg.conf.d
 │   ├── zsh
+│   ├── tmux.conf
 │   ├── vimrc
 │   └── zshrc
 ├── Ubuntu
