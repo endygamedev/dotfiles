@@ -64,23 +64,22 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"------------------------Syntastic----------------------------------
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"------------------------Syntastic----------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_mri_args = "--config=$HOME/.jshintrc"
-let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'pep8', 'pyflakes', 'python']
-let g:syntastic_yaml_checkers = ['jsyaml']
-let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['pylint', 'flake8', 'pep8', 'pyflakes', 'python']
+let g:syntastic_cpp_checkers = ['gcc', 'clang']
+let g:syntastic_c_compiler =['gcc', 'clang']
+let g:syntastic_c_compiler_options ='-Wpedantic -g'
+
 
 "----------------------Airline--------------------------------------
-
 set guifont=Dejavu\ Sans\ Mono\ 12
 let g:Powerline_symbols = 'unicode'
 
@@ -92,7 +91,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {} 
 endif
 
-"Unicode symbols
+" Unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -106,7 +105,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-"Airline symbols
+" Airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -122,11 +121,11 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 
-"--------------------------Markdown--------------------------------
 
+"--------------------------Markdown--------------------------------
 let g:mkdp_auto_start = 1
 let g:mkdp_auto_close = 1
-lef g:mkdp_refresh_slow = 1
+let g:mkdp_refresh_slow = 1
 let g:mkdp_command_for_global = 0
 let g:mkdp_open_ip = ''
 let g:mkdp_browser = ''
@@ -156,7 +155,8 @@ let NERDTreeeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
 
-"-------------------------TMUX-------------------------------------"
+
+"-------------------------tmux-------------------------------------
 if &term =~ '^screen'
 	execute "set <xUp>=\e[1;*A"
 	execute "set <xDown>=\e[1;*B"
@@ -166,9 +166,8 @@ endif
 		
 
 "--------------------------MY SETTINGS------------------------------
-
-"Style
-let g:python_highlight_all = 1 "Python Syntax
+" Style
+let g:python_highlight_all = 1 " Python Syntax
 let g:conoline_auto_enable = 1
 syntax enable
 colorscheme nord
@@ -178,18 +177,18 @@ set wrap
 set cursorline
 set mouse=a
 
-"Backup .swp
+" Backup .swp
 set nobackup
 set noswapfile
 
-"Tab size
+" Tab size
 set tabstop=4
 set shiftwidth=4
 set smarttab
 set autoindent
 set linebreak
 
-"Binds
+" Binds
 map <C-z> :undo<CR>
 map <C-p> :tabn<CR>
 map <C-o> :tabp<CR>
@@ -198,21 +197,16 @@ map <C-m> :tabnew<CR>
 map <C-x> :tabclose<CR>
 map <C-y> :lclose<CR>
 
-"Run Python Scripts
-autocmd FileType python map <buffer> <F5> :w<CR>:ba<CR> :ter python3 "%"<CR>
-"FileType python map <buffer> <F5> :w<CR>:exec '!clear; time python3' shellescape(@%, 1)<CR>
+" Clipboard
+set clipboard=unnamedplus
 
-"Run Rust Projects
+" Run Python Scripts
+autocmd FileType python map <buffer> <F5> :w<CR>:ba<CR> :ter python3 "%"<CR>
+" FileType python map <buffer> <F5> :w<CR>:exec '!clear; time python3' shellescape(@%, 1)<CR>
+
+" Run Rust Projects
 autocmd FileType rust map <buffer> <F5> :w<CR> :!clear; time cargo run<CR>
 
 " Run C files
 autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
 autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
-
-"Comment Lines Python Scripts
-autocmd FileType python vmap <buffer> <C-d> :s/^/#/g <CR> :let @/ = ""<CR>
-autocmd FileType python map <buffer> <C-d> :s/^/#/g <CR> :let @/ = ""<CR>
-
-"Comment Lines Rust
-autocmd FileType rust vmap <buffer> <C-d> :s:^://<CR>
-autocmd FileType rust map <buffer> <C-d> :s:^://<CR>
