@@ -21,9 +21,6 @@ export CONFIG="$HOME/.config/i3"
 # PATH to `university` folder
 export UNI="$HOME/Documents/university"
 
-# Bluetooth start alias
-alias bluetooth="sudo systemctl start bluetooth"
-
 # Syntax
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -39,6 +36,9 @@ alias python="python3"
 # Autocomplete
 source $HOME/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 zstyle ':autocomplete:*' min-delay .8
+
+# Open and kill tmux sessions
+alias texit="tmux kill-server"
 
 # Useful alias cd && ls
 function cs() {
