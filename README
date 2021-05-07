@@ -1,6 +1,7 @@
 .
 ├── Arch
 │   ├── i3
+│   ├── rofi
 │   ├── scripts
 │   ├── termite
 │   ├── xorg.conf.d
