@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#/usr/bin/env perl
 #
 # Copyright 2014 Pierre Mavro <deimos@deimos.fr>
 # Copyright 2014 Vivien Didelot <vivien@didelot.org>
@@ -43,24 +43,20 @@ $status = $1;
 $percent = $2;
 $full_text = "$label$percent%";
 
-if ($status eq 'Discharging') {
-	$full_text = '🔋 ' . $full_text;
-} elsif ($status eq 'Charging') {
-	$full_text = '⚡ ' . $full_text;
-} elsif ($status eq 'Unknown') {
-	open (AC_ADAPTER, "acpi -a |") or die;
-	$ac_adapt = <AC_ADAPTER>;
-	close(AC_ADAPTER);
+if ($percent < 10) {
+	$full_text .= ' ';
+} elsif ($percent < 25) {
+	$full_text .= ' ';
+} elsif ($percent < 50) {
+	$full_text .= ' ';
+} elsif ($percent < 75) {
+	$full_text .= ' ';
+} elsif ($percent < 101) {
+	$full_text .= ' ';
+}
 
-	if ($ac_adapt =~ /: ([\w-]+)/) {
-		$ac_adapt = $1;
-
-		if ($ac_adapt eq 'on-line') {
-			$full_text = '⚡ ' . $full_text;
-		} elsif ($ac_adapt eq 'off-line') {
-			$full_text = '🔋 ' . $full_text;
-		}
-	}
+if($status eq 'Charging') {
+	$full_text = ' '.$full_text;
 }
 
 $short_text = $full_text;
@@ -72,15 +68,15 @@ print "$short_text\n";
 # consider color and urgent flag only on discharge
 if ($status eq 'Discharging') {
 
-	if ($percent < 20) {
+	if ($percent < 10) {
 		print "#FF0000\n";
-	} elsif ($percent < 40) {
+	} elsif ($percent < 25) {
 		print "#FFAE00\n";
-	} elsif ($percent < 60) {
+	} elsif ($percent < 50) {
 		print "#FFF600\n";
-	} elsif ($percent < 85) {
+	} elsif ($percent < 75) {
 		print "#A8FF00\n";
-	} elsif ($percent <= 100) {
+	} elsif ($percent < 101) {
 		print "#4DFF00\n";
 	}
 
@@ -90,5 +86,6 @@ if ($status eq 'Discharging') {
 } elsif ($status eq 'Charging') {
 	print "#FFF454\n";
 }
+
 
 exit(0);
