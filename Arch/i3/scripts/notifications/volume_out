@@ -1,0 +1,3 @@
+#!/bin/bash
+var=$(/home/egor/.config/i3/scripts/volume)
+notify-send "Volume" "${var}"

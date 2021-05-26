@@ -31,4 +31,5 @@ xrandr --output "$MON" --brightness "$CurrBright"   # Set new brightness
 
 # Display current brightness
 printf "Monitor $MON "
-echo $( xrandr --verbose --current | grep ^"$MON" -A5 | tail -n1) 
+notify-send "Brightness" "$(bc <<< $(xrandr --current --verbose | grep "eDP-1-1" -A5 | tail -n1 | cut -d ":" -f2)*100 | cut -d "." -f1)%"
+echo $( xrandr --verbose --current | grep ^"$MON" -A5 | tail -n1)

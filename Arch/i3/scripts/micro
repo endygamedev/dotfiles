@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(amixer get Capture) | cut -d '[' -f 5- | rev | cut -c 2- | rev | tr a-z A-Z
+echo $(amixer get Capture) | cut -d '[' -f 5- | rev | cut -c 2- | rev | tr a-z a-z
