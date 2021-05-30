@@ -1,4 +1,4 @@
 #!/bin/bash
 amixer -D pulse sset Capture toggle
-var=$(echo $(amixer get Capture) | cut -d '[' -f 5- | rev | cut -c 2- | rev | tr a-z a-z)
-notify-send "Microphone" "${var}"
+var=$(echo $(amixer get Capture) | cut -d '[' -f 5- | rev | cut -c 2- | rev | tr a-z A-Z)
+notify-send --hint=string:x-dunst-stack-tag:micro " Microphone" "${var}"

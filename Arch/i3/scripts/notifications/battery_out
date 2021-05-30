@@ -1,0 +1,5 @@
+#!/bin/bash
+BATTINFO=`acpi -b`
+if [[ `echo $BATTINFO | cut -f 5 -d " "` < 02:00:00 ]] ; then
+	notify-send -u critical "  Battery" "Need to charge laptop\n$BATTINFO"
+fi

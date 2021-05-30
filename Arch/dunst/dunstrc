@@ -30,7 +30,8 @@
 	icon_position = left
 	max_icon_size = 32
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-
+	stack_duplicates = true
+	hide_duplicate_count = true
 [frame]
     width = 1
     color = "#aaaaaa"
