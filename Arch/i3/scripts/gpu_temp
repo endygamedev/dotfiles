@@ -1,0 +1,3 @@
+#!/bin/bash
+temp=$(nvidia-settings -q gpucoretemp -t) 
+echo "$temp" | cut -d " " -f2

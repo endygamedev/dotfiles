@@ -1,0 +1,2 @@
+#!/bin/bash
+perl /home/egor/.config/i3/scripts/fancontrol.pl := 0x93 0x04

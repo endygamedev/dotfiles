@@ -193,6 +193,10 @@ bindsym Print exec gnome-screenshot --interactive
 bindsym XF86MonBrightnessUp exec /home/egor/.config/i3/scripts/brightUp
 bindsym XF86MonBrightnessDown exec /home/egor/.config/i3/scripts/brightDown
 
+
+bindsym $mod+XF86MonBrightnessUp exec sudo /home/egor/.config/i3/scripts/fancontrol_auto && notify-send "Fan control" "Fans mode: auto"
+bindsym $mod+XF86MonBrightnessDown exec sudo /home/egor/.config/i3/scripts/fancontrol_low && notify-send "Fan control" "Fans mode: disable"
+
 # Wallpaper
 exec_always feh --bg-scale /home/egor/Pictures/wallpaper.png
 
