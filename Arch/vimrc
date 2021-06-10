@@ -185,6 +185,7 @@ syntax enable
 colorscheme nord
 syntax on
 set number
+" set relativenumber
 set wrap
 set cursorline
 set mouse=a
@@ -220,8 +221,10 @@ autocmd FileType python map <buffer> <F5> :w<CR>:ba<CR> :ter python3 "%"<CR>
 autocmd FileType rust map <buffer> <F5> :w<CR> :!clear; time cargo run<CR>
 
 " Run C files
-autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
-autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
+" autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
+" autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
+autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -std=c99 -Werror -Wall -Wextra -Wpedantic % -o %< -lm && ./%< <CR>
+autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -std=c99 -Werror -Wall -Wextra -Wpedantic % -o %< -lm && ./%< <CR>
 
 " Run C++ files
 autocmd FileType cpp vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
@@ -230,3 +233,17 @@ autocmd FileType cpp map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && 
 " Run Go files
 autocmd FileType go vmap <buffer> <F5> :w<CR> :!clear; go run % <CR>
 autocmd FileType go map <buffer> <F5> :w<CR> :!clear; go run % <CR>
+
+
+" Toggle line number 
+nnoremap <C-u> :call NumberToggle()<CR>
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+    set norelativenumber
+  else
+    set nonumber
+    set relativenumber
+  endif
+endfunc
