@@ -62,7 +62,7 @@ Theme:
 [nord-termite](https://github.com/arcticicestudio/nord-termite)
 
 Font:  
-[nerdfonsts.com/DejaVuSansMono Nerd Font](https://www.nerdfonts.com/font-downloads)
+[nerdfonts.com/DejaVuSansMono Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 ---
 
