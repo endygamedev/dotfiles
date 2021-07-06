@@ -185,7 +185,6 @@ syntax enable
 colorscheme nord
 syntax on
 set number
-" set relativenumber
 set wrap
 set cursorline
 set mouse=a
@@ -221,10 +220,10 @@ autocmd FileType python map <buffer> <F5> :w<CR>:ba<CR> :ter python3 "%"<CR>
 autocmd FileType rust map <buffer> <F5> :w<CR> :!clear; time cargo run<CR>
 
 " Run C files
-" autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
-" autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
-autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -std=c99 -Werror -Wall -Wextra -Wpedantic % -o %< -lm && ./%< <CR>
-autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -std=c99 -Werror -Wall -Wextra -Wpedantic % -o %< -lm && ./%< <CR>
+autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
+autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
+" autocmd FileType c vmap <buffer> <F5> :w<CR> :!clear; gcc -std=c99 -Werror -Wall -Wextra -Wpedantic % -o %< -lm && ./%< <CR>
+" autocmd FileType c map <buffer> <F5> :w<CR> :!clear; gcc -std=c99 -Werror -Wall -Wextra -Wpedantic % -o %< -lm && ./%< <CR>
 
 " Run C++ files
 autocmd FileType cpp vmap <buffer> <F5> :w<CR> :!clear; gcc -Wall % -o %< -lm && ./%< <CR>
@@ -247,3 +246,17 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
+
+
+nnoremap j gj
+nnoremap gj j
+
+
+" Cursor shape
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+else
+    let &t_SI = "\e[5 q"
+    let &t_EI = "\e[2 q"
+endif

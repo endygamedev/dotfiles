@@ -1,4 +1,0 @@
-IdeaVIM
-com.kite.intellij
-org.rust.lang
-org.toml.lang
