@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "$(tree --dirsfirst --noreport -L 2 -a -I '.git')" > README
