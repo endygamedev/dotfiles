@@ -86,3 +86,8 @@ See all settings in the [source code](./src/tmux.conf)
 
 ### i3
 Some scripts were taken from [vivien/i3blocks](https://github.com/vivien/i3blocks)
+
+---
+
+### firefox
+I just applied a custom font to all sites — [Fira Sans](https://fonts.google.com/specimen/Fira+Sans)
