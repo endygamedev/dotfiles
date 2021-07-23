@@ -12,7 +12,7 @@
 
 ---
 
-![Screenshot](./assets/screenshot.jpg)
+![Screenshot](./assets/screenshot.png)
 
 ---
 
@@ -79,8 +79,8 @@ See all settings in the [source code](./src/dunst/dunstrc)
 ---
 
 ### tmux
-No dependencies  
-See all settings in the [source code](./src/tmux.conf)
+Theme:
+[.tmux](https://github.com/gpakosz/.tmux)
 
 ---
 
