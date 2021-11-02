@@ -1,5 +1,16 @@
 #!/bin/bash
 BATTINFO=`acpi -b`
-if [[ `echo $BATTINFO | cut -f 5 -d " "` < 02:00:00 ]] ; then
-	notify-send -u critical "  Battery" "Need to charge laptop\n$BATTINFO"
-fi
+PERCENT=`cat /sys/class/power_supply/BAT0/capacity`
+SAW=0
+while true
+do
+    if [ $PERCENT -lt 10 ] && [ $SAW -eq 0 ] ; then
+        notify-send -u critical "  Battery" "Need to charge laptop\n$BATTINFO"
+        SAW=1
+    else
+        if [ $PERCENT -ge 10 ] ; then
+            SAW=0
+        fi
+    fi
+    sleep 1
+done

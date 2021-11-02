@@ -23,8 +23,6 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -48,6 +46,12 @@ Plugin 'junegunn/vim-emoji'
 
 " Markdown
 Plugin 'iamcco/markdown-preview.nvim'
+
+" Autocomplete
+Plugin 'ycm-core/YouCompleteMe'
+
+" Icons
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -179,6 +183,7 @@ let g:NERDToggleCheckAllLines = 1
 
 "--------------------------MY SETTINGS------------------------------
 " Style
+set encoding=utf8
 let g:python_highlight_all = 1 " Python Syntax
 let g:conoline_auto_enable = 1
 syntax enable
@@ -196,9 +201,11 @@ set noswapfile
 " Tab size
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set smarttab
 set autoindent
 set linebreak
+
 
 " Binds
 map <C-z> :undo<CR>
@@ -260,3 +267,17 @@ else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
 endif
+
+
+" Haskell LSP
+let g:ycm_language_server = [
+\   {
+\     'name': 'haskell-language-server',
+\     'cmdline': [ 'haskell-language-server-wrapper', '--lsp'],
+\     'filetypes': [ 'haskell', 'lhaskell' ],
+\     'project_root_files': [ 'stack.yaml', 'cabal.project', 'package.yaml', 'hie.yaml' ],
+\   },
+\ ]
+
+" Haskell settings
+autocmd BufReadPost,BufNewFile *.hs setlocal tabstop=2 shiftwidth=2 nosmarttab

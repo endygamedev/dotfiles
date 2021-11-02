@@ -1,0 +1,20 @@
+#!/bin/bash
+
+INTERFACE=$(iw dev | grep "Interface" | cut -d ' ' -f 2)
+HELP="Arguments:\n -l or list\t\t\t\tList of available WiFi points\n -c or connect <name> <password>\tConnects to WiFi point by <name> and <password>\n -d or disconnect\t\t\tDisconnects from the WiFi point\n -h or help\t\t\t\tPrint help (this message) and exit"
+
+if [[ $1 == "list" || $1 == "-l" ]]; then
+	watch nmcli device wifi list
+elif [[ $1 == "connect" || $1 == "-c" ]]; then
+	if [[ -z $3 ]]; then
+		nmcli device wifi connect "$2"
+	else
+		nmcli device wifi connect "$2" password "$3"
+	fi
+elif [[ $1 == "disconnect" || $1 == '-d' ]]; then
+	nmcli device disconnect $INTERFACE
+elif [[ $1 == "help" || $1 == "-h" ]]; then
+	echo -e $HELP
+else
+	echo -e $HELP
+fi

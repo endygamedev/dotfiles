@@ -15,8 +15,14 @@ export PATH="${HOME}/.local/bin:$PATH"
 # PATH to Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# PATH to Go
+export PATH=$PATH:/usr/local/go/bin
+
 # PATH to i3 configs
 export CONFIG="$HOME/.config/i3"
+
+# PATH to tmp folder
+export TMP="$HOME/github/tmp"
 
 # PATH to `university` folder
 export UNI="$HOME/Documents/university"
@@ -46,3 +52,13 @@ function cs() {
 }
 
 alias cs="cs"
+[ -f "/home/egor/.ghcup/env" ] && source "/home/egor/.ghcup/env" # ghcup-env
+
+# Haskell
+alias ghci="clear;ghci"
+
+# Geckodriver
+export PATH="$PATH:/usr/local/bin/geckodriver"
+
+# QT settings
+QT_DEVICE_PIXEL_RATIO=1

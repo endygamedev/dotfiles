@@ -1,0 +1,10 @@
+debtap 3.4.2-1
+downgrade 10.1.0-1
+google-chrome-stable 94.0.4606.71-1
+haskell-brittany 0.13.1.2-14
+haskell-hls-brittany-plugin 1.0.0.1-30
+packettracer 8.0.1-1
+snapd 2.48.2-1
+termite 15-4
+termite-terminfo 15-4
+yay-git 11.0.0.rc1.r0.gb2a7281-1
