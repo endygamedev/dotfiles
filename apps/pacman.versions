@@ -41,6 +41,7 @@ i3lock 2.13-1
 i3status 2.13-3
 imagemagick 7.1.0.12-1
 inetutils 2.2-1
+itstool 1:2.0.6-2
 jre8-openjdk 8.u292-1
 jupyterlab 3.2.1-1
 libpng12 1.2.59-2
@@ -57,6 +58,7 @@ neofetch 7.1.0-2
 net-tools 2.10-1
 netctl 1.26-1
 networkmanager 1.32.12-1
+ninja 1.10.2-1
 nitrogen 1.6.1-4
 noto-fonts-emoji 20210625-1
 npm 8.1.0-1
@@ -68,11 +70,11 @@ packettracer 8.0.1-1
 pacman-contrib 1.4.0-4
 patch 2.7.6-8
 pavucontrol 1:5.0-1
+pipewire 1:0.3.39-1
+pipewire-pulse 1:0.3.39-1
 pkgconf 1.8.0-1
 powertop 2.14-1
-pulseaudio 15.0-1
 pulseaudio-alsa 1:1.2.5-2
-pulseaudio-bluetooth 15.0-1
 ranger 1.9.3-3
 rofi 1.7.0-1
 rsync 3.2.3-4

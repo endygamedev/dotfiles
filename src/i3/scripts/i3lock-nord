@@ -1,41 +1,47 @@
 #!/bin/sh
 
-/home/egor/.config/i3/i3lock-color/build/i3lock -n -e                    \
-    --line-color=00000000        \
-    --keyhl-color=88c0d0ff       \
-    --bshl-color=d8dee9ff	\
-    --separator-color=00000000   \
-    --radius=300		\
-    \
-    --insidever-color=00000000	\
-    --insidewrong-color=00000000 \
-    --inside-color=00000000	\
-    \
-    --ring-color=5e81acff        \
-    --ringver-color=a3be8cff     \
-    --ringwrong-color=bf616aff   \
-    \
-    --clock			\
-    --time-color=eceff4ff	\
-    --time-str="%H:%M:%S"		\
-    --time-font=DejaVuSansMono Nerd Font Bold		\
-    --time-size=100		\
-    \
-    --date-color=d8dee9ff	\
-    --date-str="%A, %d %B"	\
-    --date-font=DejaVuSansMono Nerd Font Bold		\
-    --date-size=30		\
-    --date-pos="tx:525"		\
-    \
-    --verif-text="Verifying..."	\
-    --verif-font=DejaVuSansMono Nerd Font Bold	\
-    --verif-color=d8dee9ff	\
-    --verif-size=45		\
-    \
-    --wrong-text="Incorrect"	\
-    --wrong-font=DejaVuSansMono Nerd Font Bold		\
-    --wrong-color=d8dee9ff	\
-    --wrong-size=45		\
-    \
-    --indicator			\
-    --color=2e3440
+CURRENT_LANG=$($HOME/.config/i3/xkblayout-state/xkblayout-state print %s)
+if [ $CURRENT_LANG == "us" ]
+then
+    $HOME/.config/i3/i3lock-color/build/i3lock -n -e                    \
+        --line-color=00000000        \
+        --keyhl-color=88c0d0ff       \
+        --bshl-color=d8dee9ff	\
+        --separator-color=00000000   \
+        --radius=300		\
+        \
+        --insidever-color=00000000	\
+        --insidewrong-color=00000000 \
+        --inside-color=00000000	\
+        \
+        --ring-color=5e81acff        \
+        --ringver-color=a3be8cff     \
+        --ringwrong-color=bf616aff   \
+        \
+        --clock			\
+        --time-color=eceff4ff	\
+        --time-str="%H:%M:%S"		\
+        --time-font=DejaVuSansMono Nerd Font Bold		\
+        --time-size=100		\
+        \
+        --date-color=d8dee9ff	\
+        --date-str="%A, %d %B"	\
+        --date-font=DejaVuSansMono Nerd Font Bold		\
+        --date-size=30		\
+        --date-pos="tx:525"		\
+        \
+        --verif-text="Verifying..."	\
+        --verif-font=DejaVuSansMono Nerd Font Bold	\
+        --verif-color=d8dee9ff	\
+        --verif-size=45		\
+        \
+        --wrong-text="Incorrect"	\
+        --wrong-font=DejaVuSansMono Nerd Font Bold		\
+        --wrong-color=d8dee9ff	\
+        --wrong-size=45		\
+        \
+        --indicator			\
+        --color=2e3440
+else
+	notify-send " Lock screen" "Change keyboard layout" --urgency=critical
+fi
