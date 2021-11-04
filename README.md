@@ -7,7 +7,7 @@
 | (_| | (_) | |_|  _| | |  __/\__ \
  \__,_|\___/ \__|_| |_|_|\___||___/
 
-# Another dotfiles repo v1.0
+# Another dotfiles repo v1.3
 ```
 
 ---
