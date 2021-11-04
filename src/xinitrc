@@ -4,4 +4,5 @@ xrandr --auto
 xrandr --output "eDP-1-1" --brightness 0.6V
 xsetroot -solid "#2e3440"
 dunst &
+battery_out &
 exec i3
