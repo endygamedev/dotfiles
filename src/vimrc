@@ -281,3 +281,4 @@ let g:ycm_language_server = [
 
 " Haskell settings
 autocmd BufReadPost,BufNewFile *.hs setlocal tabstop=2 shiftwidth=2 nosmarttab
+autocmd BufReadPost,BufNewFile *.cabal setlocal tabstop=2 shiftwidth=2 nosmarttab
